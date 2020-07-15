@@ -48,14 +48,14 @@ let mapleader = ' '
 " shortcut to save
 nmap <leader>, :w<cr>
 
-" nnoremap <C-h> <C-w>h
-" nnoremap <C-j> <C-w>j
-" nnoremap <C-k> <C-w>k
-" nnoremap <C-l> <C-w>v
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
 
 " Split window
-" nmap ss :split<Return><C-w>w
-" nmap sv :vsplit<Return><C-w>w
+nmap ss :split<Return><C-j>
+nmap sv :vsplit<Return><C-l>
 
 " Move window
 " map sh <C-w>h
@@ -71,27 +71,6 @@ nnoremap <C-t> :tabnew<CR>
 
 " map <leader>wc :wincmd q<cr>
 map <C-w> :wincmd q<cr>
-
-" ##################### Functions ##################### 
-map <C-h> :call WinMove('h')<cr>
-map <C-j> :call WinMove('j')<cr>
-map <C-k> :call WinMove('k')<cr>
-map <C-l> :call WinMove('l')<cr>
-
-" Window movement shortcuts
-" move to the window in the direction shown, or create a new window
-function! WinMove(key)
-    let t:curwin = winnr()
-    exec "wincmd ".a:key
-    if (t:curwin == winnr())
-        if (match(a:key,'[jk]'))
-            wincmd v
-        else
-            wincmd s
-        endif
-        exec "wincmd ".a:key
-    endif
-endfunction
 
 
 " ##################### Plugins ##################### 
