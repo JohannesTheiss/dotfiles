@@ -35,9 +35,14 @@ set updatetime=50
 " Don't pass messages to |ins-completion-menu|.
 set shortmess+=c
 
-set encoding=utf8
-let base16colorspace=256  " Access colors present in 256 colorspace"
-set t_Co=256 " Explicitly tell vim that the terminal supports 256 colors"
+" set encoding=utf8
+" let base16colorspace=256  
+"  Access colors present in 256 colorspace"
+" set t_Co=256 
+" Explicitly tell vim that the terminal supports 256 colors"
+
+" disable ex mode
+map Q <Nop>
 
 " enable mouse scrolling (with tmux)
 set mouse=a
@@ -69,6 +74,16 @@ nmap <Tab> :tabnext<Return>
 
 nnoremap <C-t> :tabnew<CR>
 
+" move a marked codeblock up or down
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+
+" resize with arrow-keys
+nnoremap <Right> :vertical resize +5<CR>
+nnoremap <Left> :vertical resize -5<CR>
+nnoremap <Up> :3winc +<CR>
+nnoremap <Down> :3winc -<CR>
+
 " map <leader>wc :wincmd q<cr>
 map <C-w> :wincmd q<cr>
 
@@ -86,10 +101,40 @@ Plug 'sheerun/vim-polyglot'
 " tmux integration for vim
 Plug 'benmills/vimux'
 
+" color
+Plug 'gruvbox-community/gruvbox'
+
 call plug#end()
 
 
 " ##################### Plugin settings ##################### 
+" gruvbox
+let g:gruvbox_contrast_dark = 'hard'
+if exists('+termguicolors')
+    let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+    let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+endif
+let g:gruvbox_invert_selection='0'
+
+" --- vim go (polyglot) settings.
+let g:go_highlight_build_constraints = 1
+let g:go_highlight_extra_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_types = 1
+let g:go_highlight_function_parameters = 1
+let g:go_highlight_function_calls = 1
+let g:go_highlight_generate_tags = 1
+let g:go_highlight_format_strings = 1
+let g:go_highlight_variable_declarations = 1
+let g:go_auto_sameids = 1
+
+" colorscheme gruvbox
+colorscheme gruvbox
+set background=dark
 
 " COC
 autocmd CursorHold * silent call CocActionAsync('highlight')
@@ -145,19 +190,5 @@ nnoremap <leader>cr :CocRestart
 " expand to the path of the file in the current buffer
 " nmap <silent> <leader>y :NERDTreeFind<cr>
 
-" --- vim go (polyglot) settings.
-let g:go_highlight_build_constraints = 1
-let g:go_highlight_extra_types = 1
-let g:go_highlight_fields = 1
-let g:go_highlight_functions = 1
-let g:go_highlight_methods = 1
-let g:go_highlight_operators = 1
-let g:go_highlight_structs = 1
-let g:go_highlight_types = 1
-let g:go_highlight_function_parameters = 1
-let g:go_highlight_function_calls = 1
-let g:go_highlight_generate_tags = 1
-let g:go_highlight_format_strings = 1
-let g:go_highlight_variable_declarations = 1
-let g:go_auto_sameids = 1
-
+" undotree
+nnoremap <leader>u :UndotreeShow<CR>
