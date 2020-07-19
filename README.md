@@ -1,6 +1,7 @@
 ### Installation
 ```
 git clone https://github.com/JohannesTheiss/dotfiles
+cd dotfiles
 ```
 ##### [Neovim](https://neovim.io/)
 ```
