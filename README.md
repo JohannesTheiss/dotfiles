@@ -16,7 +16,10 @@ cp init.vim ~/.config/nvim/
 nvim ~/.config/nvim/init.vim -c PlugInstall
 ```
 restart Neovim
-
+and make a Neovim CheckHealth
+```
+nvim -c checkhealth
+```
 
 ##### [tmux](https://github.com/tmux/tmux)
 ```
