@@ -1,4 +1,4 @@
-### Install
+### Installation
 ```
 git clone https://github.com/JohannesTheiss/dotfiles
 ```
@@ -9,6 +9,7 @@ mkdir ~/.config/nvim
 cp init.vim ~/.config/nvim/
 ```
 ##### [vim-plug](https://github.com/junegunn/vim-plug)
+Install vim-plug from https://github.com/junegunn/vim-plug
 ##### Install needed Plugins
 ```
 nvim ~/.config/nvim/init.vim -c PlugInstall
