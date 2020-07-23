@@ -87,6 +87,8 @@ nnoremap <Down> :3winc -<CR>
 " map <leader>wc :wincmd q<cr>
 map <C-w> :wincmd q<cr>
 
+nnoremap ö }
+nnoremap ä {
 
 " ##################### Plugins ##################### 
 call plug#begin('~/.config/nvim/plugged')
