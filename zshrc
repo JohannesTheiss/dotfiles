@@ -21,7 +21,8 @@ zstyle ':completion:*' cache-path ~/.zsh/cache
 # Enable colors and change prompt:
 autoload -U colors && colors
 #PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
-PS1="%n :: %B%{$fg[cyan]%}%(4~|%-1~/.../%2~|%~)%u%b %{$reset_color%}$%b "
+#PS1="%n :: %B%{$fg[cyan]%}%(4~|%-1~/.../%2~|%~)%u%b %{$reset_color%}$%b "
+PS1="%B%{$fg[red]%}%n :: %B%{$fg[cyan]%}%(4~|%-1~/.../%2~|%~)%u%b %{$reset_color%}$%b "
 
 # Print a greeting message when shell is started
 echo $USER@$HOST  $(uname -srm) $(lsb_release -rcs)
