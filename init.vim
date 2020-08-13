@@ -91,6 +91,7 @@ map <C-w> :wincmd q<cr>
 "nnoremap ö }
 "nnoremap ä {
 
+
 " ##################### Plugins ##################### 
 call plug#begin('~/.config/nvim/plugged')
 

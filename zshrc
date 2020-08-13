@@ -56,7 +56,14 @@ bindkey -v '^?' backward-delete-char
 alias v="nvim"
 alias ls="exa"
 alias grep="grep --color"
-alias cp="cp -i"                                                # Confirm before overwriting something
+alias cp="cp -i" # Confirm before overwriting something
+alias to="~/scripts/toggleAudio"
+alias scan="sudo nmap -PE 192.168.2.1-200"
+
+# qt and pi
+alias topi="~/scripts/rsync/sync.sh"
+alias frompi="~/scripts/rsync/getFrom.sh"
+alias piMake="~/fh/GPS_Logbook/Pi/raspi-qt/build/bin/qmake"
 
 
 ###### GIT #########
@@ -80,3 +87,4 @@ parse_git_branch() {
 ########## PLUGINS #########
 # Load zsh-syntax-highlighting; should be last.
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
+
