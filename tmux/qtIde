@@ -13,15 +13,17 @@ then
     # start up main window
     tmux send-keys -t 'Main' 'cd /home/johannes/fh/GPS_Logbook/GPS_Logbook' C-m 'clear' C-m
 
-    # Create and setup pane for ssh to pi
+    # create and setup pane for ssh to pi
     tmux new-window -t $session:2 -n 'pi ssh'
     tmux send-keys -t 'pi ssh' 'ssh g' C-m
 
-
+    # setup right pane
     tmux split-window -h -p 30
-
+    tmux send-keys -t 2 "ssh g" Enter
+    tmux send-keys -t 2 "cd /usr/local/GPS-Logbook" Enter
 fi
-
 
 # Attach Session, on the Main window
 tmux attach-session -t $session:1
+
+tmux selectp -t 1
