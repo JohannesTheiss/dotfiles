@@ -20,6 +20,10 @@ and make a CheckHealth
 ```
 nvim -c checkhealth
 ```
+##### Install coc extensions
+```
+:CocInstall coc-highlight
+```
 
 ##### [tmux](https://github.com/tmux/tmux)
 ```
