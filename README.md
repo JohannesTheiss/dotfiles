@@ -28,10 +28,11 @@ cp tmux.conf ~/.tmux.conf
 ```
 
 ### Optional
-set aliases in ~/.bashrc
+set aliases in .bashrc or .zshrc 
 ```
 alias v="nvim"
 
 # tmux scripts
 alias ide="~/scripts/ide"
+alias qtide="~/scripts/tmux/qtIde"
 ```
