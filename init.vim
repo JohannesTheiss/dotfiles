@@ -35,12 +35,6 @@ set updatetime=50
 " Don't pass messages to |ins-completion-menu|.
 set shortmess+=c
 
-" set encoding=utf8
-" let base16colorspace=256  
-"  Access colors present in 256 colorspace"
-" set t_Co=256 
-" Explicitly tell vim that the terminal supports 256 colors"
-
 " disable ex mode
 map Q <Nop>
 
@@ -61,12 +55,6 @@ nnoremap <C-l> <C-w>l
 " Split window
 nmap ss :split<Return><C-j>
 nmap sv :vsplit<Return><C-l>
-
-" Move window
-" map sh <C-w>h
-" map sk <C-w>k
-" map sj <C-w>j
-" map sl <C-w>l
 
 " Switch tab
 nmap <S-Tab> :tabprev<Return>
@@ -107,11 +95,17 @@ Plug 'benmills/vimux'
 
 " color
 Plug 'gruvbox-community/gruvbox'
+" Plug 'drewtempelmeyer/palenight.vim'
 
 call plug#end()
 
 
 " ##################### Plugin settings ##################### 
+if (has("termguicolors"))
+    set termguicolors
+endif
+
+
 " gruvbox
 let g:gruvbox_contrast_dark = 'hard'
 if exists('+termguicolors')
@@ -119,6 +113,7 @@ if exists('+termguicolors')
     let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 endif
 let g:gruvbox_invert_selection='0'
+
 
 " --- vim go (polyglot) settings.
 let g:go_highlight_build_constraints = 1
@@ -136,7 +131,12 @@ let g:go_highlight_format_strings = 1
 let g:go_highlight_variable_declarations = 1
 let g:go_auto_sameids = 1
 
-" colorscheme gruvbox
+
+" test
+" set t_8f=^[[38;2;%lu;%lu;%lum  " Needed in tmux
+" set t_8b=^[[48;2;%lu;%lu;%lum  " Ditto
+" set termguicolors
+
 colorscheme gruvbox
 set background=dark
 
@@ -184,15 +184,7 @@ nnoremap <leader>cr :CocRestart
 " Coc explorer
 :nmap <space>e :CocCommand explorer<CR>
 
-" NERDTree
-" close NERDTree after a file is opened
-" let g:NERDTreeQuitOnOpen=0
-" show hidden files in NERDTree
-" let NERDTreeShowHidden=1
-" Toggle NERDTree
-" nmap <silent> <leader>k :NERDTreeToggle<cr>
-" expand to the path of the file in the current buffer
-" nmap <silent> <leader>y :NERDTreeFind<cr>
-
 " undotree
 nnoremap <leader>u :UndotreeShow<CR>
+
+
