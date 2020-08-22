@@ -1,5 +1,3 @@
-
-Plug 'tpope/vim-surround'
 syntax on
 
 set guicursor=
