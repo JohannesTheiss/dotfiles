@@ -1,3 +1,5 @@
+
+Plug 'tpope/vim-surround'
 syntax on
 
 set guicursor=
@@ -87,15 +89,14 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tpope/vim-fugitive'
 Plug 'vim-utils/vim-man'
 Plug 'mbbill/undotree'
-Plug 'preservim/nerdtree'
 Plug 'sheerun/vim-polyglot'
+Plug 'vim-airline/vim-airline'
 
 " tmux integration for vim
 Plug 'benmills/vimux'
 
 " color
 Plug 'gruvbox-community/gruvbox'
-" Plug 'drewtempelmeyer/palenight.vim'
 
 call plug#end()
 
@@ -140,6 +141,11 @@ let g:go_auto_sameids = 1
 colorscheme gruvbox
 set background=dark
 
+" set termguicolors
+" colorscheme monokai_pro
+
+
+
 " COC
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
@@ -183,6 +189,8 @@ nnoremap <leader>cr :CocRestart
 
 " Coc explorer
 :nmap <space>e :CocCommand explorer<CR>
+" Coc color picker
+:nmap <space>c :call CocAction('pickColor')<CR>
 
 " undotree
 nnoremap <leader>u :UndotreeShow<CR>
