@@ -24,6 +24,8 @@ autoload -U colors && colors
 #PS1="%n :: %B%{$fg[cyan]%}%(4~|%-1~/.../%2~|%~)%u%b %{$reset_color%}$%b "
 PS1="%B%{$fg[red]%}%n :: %B%{$fg[cyan]%}%(4~|%-1~/.../%2~|%~)%u%b %{$reset_color%}$%b "
 
+
+
 # Print a greeting message when shell is started
 echo $USER@$HOST  $(uname -srm) $(lsb_release -rcs)
 
@@ -56,35 +58,33 @@ bindkey -v '^?' backward-delete-char
 alias v="nvim"
 alias ls="exa"
 alias grep="grep --color"
-alias cp="cp -i" # Confirm before overwriting something
+alias diff="diff --color"
+alias cp="cp -i"                                                # Confirm before overwriting something
 alias to="~/scripts/toggleAudio"
 alias scan="sudo nmap -PE 192.168.2.1-200"
+alias df='df -h'                                                # Human-readable sizes
+alias free='free -m'                                            # Show sizes in MB
+# git always
+alias gl="git log --oneline --all --graph"
+alias gitu='git add . && git commit && git push'
+
+alias ide="~/scripts/tmux/ide"
 
 # qt and pi
 alias topi="~/scripts/rsync/sync.sh"
 alias frompi="~/scripts/rsync/getFrom.sh"
-alias piMake="~/fh/GPS_Logbook/Pi/raspi-qt/build/bin/qmake"
+#alias pimake="~/fh/GPS_Logbook/Pi/raspi-qt/tools/build-tools/bin/qmake"
+alias pimake="~/fh/GPS_Logbook/Pi/raspi/qt5/bin/qmake"
+alias qtide="~/scripts/tmux/qtIde"
+alias run="~/fh/GPS_Logbook/Pi/pi-scripts/deploy.sh"
 
 
-###### GIT #########
-# Modify the colors and symbols in these variables as desired.
-GIT_PROMPT_SYMBOL="%{$fg[blue]%}±"                              # plus/minus     - clean repo
-GIT_PROMPT_PREFIX="%{$fg[green]%}[%{$reset_color%}"
-GIT_PROMPT_SUFFIX="%{$fg[green]%}]%{$reset_color%}"
-GIT_PROMPT_AHEAD="%{$fg[red]%}ANUM%{$reset_color%}"             # A"NUM"         - ahead by "NUM" commits
-GIT_PROMPT_BEHIND="%{$fg[cyan]%}BNUM%{$reset_color%}"           # B"NUM"         - behind by "NUM" commits
-GIT_PROMPT_MERGING="%{$fg_bold[magenta]%}⚡︎%{$reset_color%}"     # lightning bolt - merge conflict
-GIT_PROMPT_UNTRACKED="%{$fg_bold[red]%}●%{$reset_color%}"       # red circle     - untracked files
-GIT_PROMPT_MODIFIED="%{$fg_bold[yellow]%}●%{$reset_color%}"     # yellow circle  - tracked files modified
-GIT_PROMPT_STAGED="%{$fg_bold[green]%}●%{$reset_color%}"        # green circle   - staged changes present = ready for "git push"
-
-parse_git_branch() {
-  # Show Git branch/tag, or name-rev if on detached head
-  ( git symbolic-ref -q HEAD || git name-rev --name-only --no-undefined --always HEAD ) 2> /dev/null
-}
 
 
 ########## PLUGINS #########
 # Load zsh-syntax-highlighting; should be last.
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
 
+
+# add ruby to path for nvim
+export PATH=/home/johannes/.gem/ruby/2.7.0/bin:$PATH
