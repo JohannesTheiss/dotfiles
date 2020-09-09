@@ -36,6 +36,7 @@ nvim -c checkhealth
 ##### Install coc extensions
 ```
 :CocInstall coc-highlight
+:CocInstall coc-explorer
 ```
 
 ##### [tmux](https://github.com/tmux/tmux)
