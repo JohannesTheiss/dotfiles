@@ -20,7 +20,7 @@ sudo pacman -S neovim
 mkdir ~/.config/nvim
 cp init.vim ~/.config/nvim/
 or
-echo "source ~/dotfiles/init.vim" > ~/.conf/nvim/init.vim
+echo "source ~/dotfiles/init.vim" > ~/.config/nvim/init.vim
 ```
 ##### [vim-plug](https://github.com/junegunn/vim-plug)
 ##### Install vim-plug from https://github.com/junegunn/vim-plug
