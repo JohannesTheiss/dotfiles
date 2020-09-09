@@ -5,6 +5,10 @@ cd dotfiles
 ```
 
 ##### Zsh
+link .zshrc
+```
+ln -sf ~/dotfiles/zshrc ~/.zshrc
+```
 install syntax highlighting
 ```
 sudo pacman -S zsh-syntax-highlighting
@@ -15,6 +19,8 @@ sudo pacman -S zsh-syntax-highlighting
 sudo pacman -S neovim
 mkdir ~/.config/nvim
 cp init.vim ~/.config/nvim/
+or
+echo "source ~/dotfiles/init.vim" > ~/.conf/nvim/init.vim
 ```
 ##### [vim-plug](https://github.com/junegunn/vim-plug)
 ##### Install vim-plug from https://github.com/junegunn/vim-plug
@@ -36,6 +42,8 @@ nvim -c checkhealth
 ```
 sudo pacman -S tmux
 cp tmux.conf ~/.tmux.conf
+or
+ln -sf ~/dotfiles/tmux.conf ~/.tmux.conf
 ```
 
 ### Optional
