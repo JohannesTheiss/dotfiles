@@ -3,6 +3,13 @@
 git clone https://github.com/JohannesTheiss/dotfiles
 cd dotfiles
 ```
+
+##### Zsh
+install syntax highlighting
+```
+sudo pacman -S zsh-syntax-highlighting
+```
+
 ##### [Neovim](https://neovim.io/)
 ```
 sudo pacman -S neovim
